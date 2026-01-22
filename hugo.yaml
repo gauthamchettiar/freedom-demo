@@ -1,0 +1,19 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Freedom
+theme: freedom
+
+params:
+  author: Gautham Chettiar
+
+menus:
+  main:
+  - name: Guide
+    pageRef: /guide
+    weight: 10
+  - name: Tags
+    pageRef: /tags
+    weight: 30
+
+markup:
+  _merge: shallow
