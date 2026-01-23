@@ -1,4 +1,4 @@
 [submodule "themes/freedom"]
 	path = themes/freedom
-	url = https://github.com/gauthamchettiar/freedom/
+	url = https://github.com/gauthamchettiar/freedom.git
 	branch = main
