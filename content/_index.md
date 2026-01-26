@@ -1,3 +1,8 @@
+---
+title: Freedom Theme Demo
+layout: content_only
+---
+
 Freedom is a minimal, flexible Hugo theme built on a component-based architecture. It focuses on simplicity and performance, making it ideal for blogs and documentation sites.
 
 ## Key Features
