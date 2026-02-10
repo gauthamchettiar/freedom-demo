@@ -287,7 +287,7 @@ You can use asterisks (`***`), dashes (`---`), or underscores (`___`) to create 
 
 ![Studio Ghubli: chihiro043](images/chihiro043.jpg "Image Caption")
 
-For more advanced image rendering options, refer to [Image Element](/components/elements/images/).
+> For more advanced image rendering options, refer to [Image Element](/components/elements/images/).
 
 ## Tables
 
@@ -315,44 +315,8 @@ For more advanced image rendering options, refer to [Image Element](/components/
 | Spirited Away | Hayao Miyazaki |
 {caption="Studio Ghibli Films"}
 
-{{< spacing size="md">}}
 
-**Example 3**: A table with first column as header
-
-```
-| Movie         | Director       |
-| ------------- | -------------- |
-| My Neighbor Totoro | Hayao Miyazaki |
-| Spirited Away | Hayao Miyazaki |
-{header="column"}
-```
-... which is rendered as :
-
-| Movie         | Director       |
-| ------------- | -------------- |
-| My Neighbor Totoro | Hayao Miyazaki |
-| Spirited Away | Hayao Miyazaki |
-{header="column"}
-
-{{< spacing size="md">}}
-
-**Example 4**: A table with no header
-```
-| Movie         | Director       |
-| ------------- | -------------- |
-| My Neighbor Totoro | Hayao Miyazaki |
-| Spirited Away | Hayao Miyazaki |
-{header="none"}
-```
-... which is rendered as :
-
-| Movie         | Director       |
-| ------------- | -------------- |
-| My Neighbor Totoro | Hayao Miyazaki |
-| Spirited Away | Hayao Miyazaki |
-{header="none"}
-
-{{< spacing size="md">}}
+> For more advanced image rendering options, refer to [Table Element](/components/elements/tables/).
 
 ## Code Blocks
 

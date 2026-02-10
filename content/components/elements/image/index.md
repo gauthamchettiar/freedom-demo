@@ -10,13 +10,11 @@ A Simple Image element that is rendered using the HTML `<img>` tag.
 <!--more-->
 
 ## Features
-- Supports tooltip and aria labels using ++`alt`++ attribute.
-- Supports adding caption using the ++`title`++ attribute.
-- Supports image resizing using ++`width`++ and ++`height`++ attributes (in pixels).
-- Supports loading images from page resource, site resource or remote URLs.
-- Automatically lazy loads images for better performance.
-- Wraps images in semantic `<figure>` tags for accessibility.
-- Generates optimized, resized images at build time for better performance.
+- Supports tooltip and aria labels using [alt text](#alt-text).
+- Supports adding caption using the [title](#title) attribute.
+- Supports image resizing using custom [attributes](#attributes).
+- Supports [loading images](#image-path) from page resource, site resource or remote URLs.
+- Loads all images with `loading="lazy"` attribute for better performance.
 
 ## Syntax
 
@@ -26,42 +24,50 @@ The basic syntax for images in Markdown follows this pattern:
 ![alt text](image-path "optional title")
 ```
 
-Hugo extends this with support for HTML attributes using curly braces:
+{{< spacing size="sm" >}}
+
+Provide additional attributes to images using curly braces after the image syntax:
 
 ```
-![alt text](image-path "optional title")  {width="600" height="400"}
+![alt text](image-path "optional title") {width="600" height="400"}
 ```
 
 ### Components
+Alt Text
+: Provides alternative text for screen readers and displays when image fails to load
+: Also used as tooltip text on hover.
 
-1. **Alt Text** (`alt text`): Provides alternative text for screen readers and displays when image fails to load
-2. **Image Path** (`image-path`): Can be:
+Image Path
+: An image can be rendered from below three sources:
    - **Page Resource**: Image in the same directory as the markdown file (e.g., `karigurashi002.jpg`)
    - **Site/Global Resource**: Image in the `assets/` directory (e.g., `/images/chihiro043.jpg`)
    - **Remote URL**: Full HTTP/HTTPS URL (e.g., `https://example.com/image.jpg`)
-3. **Title** (`"optional title"`): Displays as a caption below the image
-4. **Attributes** (`{key="value"}`): Supports setting image's `width` and `height` using hugo's image processing pipeline.
+   > [!NOTE]
+   > 
+   > ```
+   > .
+   > ├── assets
+   > │   └── images
+   > │       └── chihiro043.jpg              <-- Image from site/global resource
+   > └── content
+   >     ├── _index.md
+   >     └── advanced
+   >         ├── _index.md
+   >         ├── elements
+   >         │   ├── _index.md
+   >         │   ├── image
+   >         │   │   ├── index.md            <-- This File
+   >         │   │   └── karigurashi002.jpg  <-- Image from page resource 
+   >         │   └── image.md
+   >         └── shortcodes
+   >             └── _index.md
+   >```
 
-> [!NOTE]
-> 
-> ```
-> .
-> ├── assets
-> │   └── images
-> │       └── chihiro043.jpg              <-- Image from site/global resource
-> └── content
->     ├── _index.md
->     └── advanced
->         ├── _index.md
->         ├── elements
->         │   ├── _index.md
->         │   ├── image
->         │   │   ├── index.md            <-- This File
->         │   │   └── karigurashi002.jpg  <-- Image from page resource 
->         │   └── image.md
->         └── shortcodes
->             └── _index.md
->```
+Title
+: Displays as a caption below the image 
+
+Attributes
+: Supports setting image's `width` and `height` using hugo's image processing pipeline.
 
 > Refer Hugo's excellent resource on [image processing](https://gohugo.io/content-management/image-processing/) for more details.
 
