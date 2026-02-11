@@ -242,7 +242,9 @@ Provide additional attributes to tables using curly braces after table:
 | Chihiro | Student  | 2001 |
 
 ### Example 5: Full Sized Table 
+
 Wrap a table in full partial to make table width extend full width of the page.
+
 ```markdown
 {{</* full */>}}
 | Name    | Role     | Year |
@@ -263,7 +265,9 @@ Wrap a table in full partial to make table width extend full width of the page.
 
 
 ### Example 6: Really wide table
+
 If you have a table with many columns, it will automatically be horizontally scrollable :
+
 ```markdown
 | Name    | Role      | Year | Movie                   | Director        | Genre     | Rating | Country | Language | Awards  | Box Office |
 | :------ | :-------: | ----:| :---------------------: | :-------------: | :-------: | :----: | :-----: | :------: | :-----: | :--------: |
@@ -283,7 +287,9 @@ If you have a table with many columns, it will automatically be horizontally scr
 
 
 ### Example 7: Wide Sized Table
+
 Or instead wrap such a really wide table in wide partial to make table width extend full width of the viewport.
+
 ```markdown
 {{</* wide */>}}
 | Name    | Role      | Year | Movie                   | Director        | Genre     | Rating | Country | Language | Awards  | Box Office |

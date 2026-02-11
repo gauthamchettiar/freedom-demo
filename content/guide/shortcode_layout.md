@@ -11,14 +11,14 @@ weight: 4
 ## Wide
 By default all elements are contained within page-width, use the wide shortcode to make them span full width of the viewport.
 
-This is supported for [images](/guide/markdown_syntax#images), [tables](/guide/markdown_syntax#tables), [alert blockquotes](http://localhost:1313/guide/markdown-syntax/#alert-blockquotes), [code blocks](http://localhost:1313/guide/markdown-syntax/#code-blocks), [paragraphs](/guide/markdown_syntax#paragraphs), and any other html elements.
+This is supported for [images](guide/markdown-syntax/#images), [tables](guide/markdown-syntax/#tables), [alert blockquotes](guide/markdown-syntax/#alert-blockquotes), [code blocks](guide/markdown-syntax/#code-blocks), [paragraphs](guide/markdown-syntax/#paragraphs), and any other html elements.
 
 
 {{< spacing size="xxs" >}}
 
 **Example**: Wide Image
 
-```
+```markdown
 {{</* wide */>}}
 ![chihiro043](images/chihiro043.jpg)
 {{</* /wide */>}}
@@ -38,7 +38,7 @@ This is supported for [images](/guide/markdown_syntax#images) (whose width is sm
 
 **Example**: Full Width Table 
 
-```
+```markdown
 {{</* full */>}}
 | Movie         | Year |
 | ------------- | ---- |
@@ -82,7 +82,7 @@ Left → {{< spacing size="xxl" type="horizontal" >}} ← Right
 Align content to the `left`, `center`, or `right`:
 
 **Example 1**: Content aligned to left
-```
+```markdown
 {{</* align align="left" */>}}
 This paragraph is aligned to the left.
 {{</* /align */>}}
@@ -92,8 +92,10 @@ This paragraph is aligned to the left.
 This paragraph is aligned to the left.
 {{< /align >}}
 
+{{< spacing size="sm" >}}
+
 **Example 2**: Content aligned to center
-```
+```markdown
 {{</* align align="center" */>}}
 This paragraph is centered.
 {{</* /align */>}}
@@ -103,8 +105,10 @@ This paragraph is centered.
 This paragraph is centered.
 {{< /align >}}
 
+{{< spacing size="sm" >}}
+
 **Example 3**: Content aligned to right
-```
+```markdown
 {{</* align align="right" */>}}
 This paragraph is aligned to the right.
 {{</* /align */>}}
@@ -114,8 +118,9 @@ This paragraph is aligned to the right.
 This paragraph is aligned to the right.
 {{< /align >}}
 
-This works with any element that has width less than container width like [tables](/guide/markdown_syntax#tables):
+{{< spacing size="sm" >}}
 
+This works with any element that has width less than container width like [tables](/guide/markdown_syntax#tables):
 
 {{< align align="center" >}}
 | Syntax      | Description                         |

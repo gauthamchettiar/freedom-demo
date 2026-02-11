@@ -15,7 +15,7 @@ The Table of Contents above is wrapped in an expand/collapse shortcode. Use it o
 {{< spacing size="xxs" >}}
 
 **Example 1** : Collapsed section with a title
-```
+```markdown
 {{</* expand title="Click to reveal more" */>}}
 ... markdown content to be displayed
 {{</* /expand */>}}
@@ -40,7 +40,7 @@ Click the summary again to collapse.
 {{< spacing size="xxs" >}}
 
 **Example 2**: Expanded section with default title
-```
+```markdown
 {{</* expand open="true" */>}}
 ... already expanded content
 {{</* /expand */>}}
@@ -58,7 +58,7 @@ Insert icons inline within markdown content using the icon shortcode.
 {{< spacing size="xxs">}}
 
 **Example 1**: Inserting an icon
-```
+```markdown
 Here is a star icon: {{</* icon name="star" style="regular" */>}}
 ``` 
 
@@ -67,7 +67,7 @@ Here is a star icon: {{< icon name="star" style="regular" >}}
 {{< spacing size="xxs">}}
 
 **Example 2**: Icon with different size
-```
+```markdown
 Here is same star icon but filled : {{</* icon name="star" style="solid" */>}}
 ```
 
@@ -75,7 +75,10 @@ Here is same star icon but filled : {{< icon name="star" style="solid" >}}
 
 {{< spacing size="xxs">}}
 
-> Icons are fetched from [Font Awesome](https://fontawesome.com/icons) free catalog. Check [Regular](https://fontawesome.com/search?ip=classic&s=regular&ic=free-collection), [Solid](https://fontawesome.com/search?ip=classic&s=solid&ic=free-collection) & [Brands](https://fontawesome.com/search?ip=brands&ic=free-collection) collection for a list of suported icons.
+> Icons are fetched from [Font Awesome](https://fontawesome.com/icons) free catalog. Check below links for supported icons in each style:
+>   - [Regular](https://fontawesome.com/search?ip=classic&s=regular&ic=free-collection)
+>   - [Solid](https://fontawesome.com/search?ip=classic&s=solid&ic=free-collection)
+>   - [Brands](https://fontawesome.com/search?ip=brands&ic=free-collection)
 
 ## Badge
 
@@ -84,7 +87,7 @@ Display colorful marker badges inline with your text to highlight important info
 {{< spacing size="xxs">}}
 
 **Example 1**: Simple badge (avoid using it without proper styling)
-```
+```markdown
 {{%/* badge */%}}Important{{%/* /badge */%}}
 ```
 
@@ -93,7 +96,7 @@ Display colorful marker badges inline with your text to highlight important info
 {{< spacing size="xxs">}}
 
 **Example 2**: Badge with style
-```
+```markdown
 {{%/* badge style="info" */%}}New{{%/* /badge */%}} 
 {{%/* badge style="note" */%}}Note{{%/* /badge */%}} 
 {{%/* badge style="tip" */%}}Optional{{%/* /badge */%}} 
@@ -113,7 +116,7 @@ Display colorful marker badges inline with your text to highlight important info
 {{< spacing size="xxs">}}
 
 **Example 3**: Badge with custom title, color and icon
-```
+```markdown
 {{%/* badge color="#007bff" textColor="#fff" title="Version" */%}}6.6.6{{%/* /badge */%}}
 {{%/* badge color="#dc3545" textColor="#fbff00" icon="angle-double-up" title="Rank" */%}}Captain{{%/* /badge */%}}
 ```
@@ -123,7 +126,7 @@ Display colorful marker badges inline with your text to highlight important info
 {{< spacing size="xxs">}}
 
 **Example 4**: Badge inline with text
-```
+```markdown
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
 sed quia consequuntur magni dolores eos qui ratione voluptatem sequi 
 nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
