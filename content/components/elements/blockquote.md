@@ -7,7 +7,7 @@ coverLight: "images/elements/covers/blockquote_light.png"
 coverDark: "images/elements/covers/blockquote_dark.png"
 ---
 
-A blockquote element rendered from standard Markdown `>` syntax. Supports plain quotations and styled alert (admonition) blockquotes with configurable colors, icons and header text.
+A blockquote element rendered from standard Markdown syntax. Supports plain quotations and styled alert (admonition) blockquotes with configurable colors, icons and header text.
 
 <!--more-->
 
@@ -30,7 +30,7 @@ Alert / admonition blockquote:
 > Helpful advice or tip goes here.
 ```
 
-Provide attribute overrides using curly-brace attributes after blockquote definition:
+Provide attribute using curly-brace attributes under blockquote definition:
 
 ```markdown
 > [!STYLE] Optional Title
@@ -38,25 +38,30 @@ Provide attribute overrides using curly-brace attributes after blockquote defini
 {color="#e91e63" icon="heart" textcolor="#fff"}
 ```
 
-## Components & attributes
-style
-: Alert type (e.g. `INFO`, `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`).
+### Parameters
+Style
+: (required) Alert type (e.g. `INFO`, `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, `CAUTION`, `ACCENT`, `NONE`).
 
-color
-: Accent color used for header / left border (accepts any valid CSS color).
+Title
+: (optional) Custom title for the alert header (defaults to capitalized style name).
 
-textColor
-: Color for header text, use along with `color` to provide a readable contrast.
-
-icon
-: Override the default icon, using theme's icon set (e.g. FontAwesome names like `circle-info` or `lightbulb`).
-: Pass an empty value (e.g. `icon=""`) to hide the icon for an alert.
-
-iconStyle
-: Icon style (e.g. `solid`, `regular`, `brands`), defaults to `solid`.
+Additional Attributes
+: Additional attributes can be added in curly braces after blockquote content.
+  
+  color
+  : Accent color used for header / left border (accepts   any valid CSS color).
+  
+  textcolor
+  : Color for header text, use along with `color` to   provide a readable contrast.
+  
+  icon
+  : Override the default icon, using theme's icon set (e.  g. FontAwesome names like `circle-info` or `lightbulb`).
+  
+  iconstyle
+  : Icon style (e.g. `solid`, `regular`, `brands`),   defaults to `solid`.
 
 ### Default alert styles
-| Type     | Title | Icon           | Color |
+| Style     | Title | Icon           | Color |
 |---------|-------------|:-----------------------:|-------------|
 | INFO     | Info          | {{< icon name="circle-info" >}}          | {{< mark style="info" >}}`#0057b8`{{< /mark >}}     |
 | NOTE     | Note          | {{< icon name="pen-to-square" >}}        | {{< mark style="note" >}}`#ffc107`{{< /mark >}}     |
@@ -64,7 +69,8 @@ iconStyle
 | WARNING  | Warning       | {{< icon name="circle-exclamation" >}}   | {{< mark style="warning" >}}`#ff9900`{{< /mark >}}     |
 | IMPORTANT| Important     | {{< icon name="star" >}}                 | {{< mark style="important" >}}`#6200ea`{{< /mark >}}     |
 | CAUTION  | Caution       | {{< icon name="triangle-exclamation" >}} | {{< mark style="caution" >}}`#ff5500`{{< /mark >}}     |
-
+| ACCENT   | Alert         | —                                         | {{< mark style="accent" >}}`--color-accent`{{< /mark >}}     |
+| NONE     | Alert         | —                                         | {{< mark style="none" >}}`--color-bg`{{< /mark >}}     |
 ## Examples
 
 ### Example 1: Simple blockquote
@@ -96,6 +102,12 @@ iconStyle
 
 > [!CAUTION]
 > High voltage area — proceed with care.
+
+> [!ACCENT]
+> This is an accent alert with theme's accent color.
+
+> [!NONE]
+> This is a neutral alert without special styling.
 ```
 
 **Output:**
@@ -117,35 +129,27 @@ iconStyle
 > [!CAUTION]
 > High voltage area — proceed with care.
 
+> [!ACCENT]
+> This is an accent alert with theme's accent color.
+
+> [!NONE]
+> This is a neutral alert without special styling.
 
 ### Example 3: Alert with custom title, color and icon
 
 ```markdown
-> [!NOTE] A Love Letter
-> Blockquote content.
-{color="#e91e63" icon="heart" textcolor="#fff"}
+> [!NONE] Python 3.11 Required
+> Make sure to upgrade your Python version to 3.11.
+{color="#77a03d" textcolor="#ffffff" icon="python" iconstyle="brands"}
 ```
 
 **Output:**
-> [!NOTE] A Love Letter
-> Blockquote content.
-{color="#e91e63" icon="heart" textcolor="#fff"}
+> [!NONE] Python 3.11 Required
+> Make sure to upgrade your Python version to 3.11.
+{color="#77a03d" textcolor="#ffffff" icon="python" iconstyle="brands"}
 
-### Example 4: Alert without icon
-
-```markdown
-> [!WARNING]
-> This action is irreversible.
-{icon=""}
-```
-
-**Output:**
-> [!WARNING]
-> This action is irreversible.
-{icon=""}
-
-### Example 5: Wide blockquote
-Wrap any blockquote in the `wide` partials to span width of viewport.
+### Example 4: Wide blockquote
+Wrap any blockquote in the `wide` shortcode to span width of viewport.
 
 ```markdown
 {{</* wide */>}}

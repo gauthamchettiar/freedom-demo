@@ -3,8 +3,8 @@ title: Tables
 slug: "tables"
 date: 2025-10-29
 tags: ["elements"]
-coverDark: "images/elements/covers/table_dark.png"
 coverLight: "images/elements/covers/table_light.png"
+coverDark: "images/elements/covers/table_dark.png"
 ---
 A standard table element rendered using standard markdown table syntax, with Hugo extensions for captions, header settings, and column alignment.
 
@@ -12,9 +12,9 @@ A standard table element rendered using standard markdown table syntax, with Hug
 
 ## Features
 - Supports standard markdown table syntax.
-- Supports adding [captions](#example-2-table-with-caption), and [alignment of captions](#caption-alignment) to left, center, or right.
-- [Align column](#example-4-table-with-column-text-alignment) text to left, center, right.
-- Supports table [header](#example-3-table-with-different-heading-settings) to either be first row, column, both or none.
+- Supports adding captions, and alignment of captions to left, center, or right.
+- Align column text to left, center, right.
+- Supports table header to either be first row, column, both or none.
 
 ## Syntax
 
@@ -34,18 +34,30 @@ Provide additional attributes to tables using curly braces after table:
 | Header 1 | Header 2 |
 | -------- | -------- |
 | Cell 1   | Cell 2   |
-{caption="A Table Caption" header="row"}
+{caption="A Table Caption" captionalign="left" header="row"}
 ```
 
 {{< spacing size="sm" >}}
 
-[Align](#example-4-table-with-column-text-alignment) text in columns using `:` in header row:
+Align text in columns using `:` in header row:
 
 ```
 | Left Aligned | Center Aligned | Right Aligned |
 | :----------- | :------------: | ------------: |
 | Cell 1       | Cell 2         | Cell 3        |
 ```
+
+## Parameters
+Attributes are added in curly braces immediately after the table. Supported attributes include:
+
+caption
+: (optional) adds a caption to the table.
+
+captionalign
+: (optional) aligns the caption; valid values are `left` (default), `center`, or `right`.
+
+header
+: (optional) controls heading placement with `row`, `column`, `both`, or `none`.
 
 
 ## Examples

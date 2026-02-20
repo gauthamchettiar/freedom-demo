@@ -47,9 +47,7 @@ Click the summary again to collapse.
 ```
 
 {{< expand open="true" >}}
-Expand also supports an open param that sets initial state of component,`open = "true"` equals an already expanded component. 
-
-Also, if you don't specify a title, it defaults to "Details".
+Expand also supports an open param that sets initial state of component—`open = "true"` renders the component already expanded. If you omit `title`, the summary text defaults to `Details`.
 {{< /expand >}}
 
 ## Icon
@@ -75,10 +73,7 @@ Here is same star icon but filled : {{< icon name="star" style="solid" >}}
 
 {{< spacing size="xxs">}}
 
-> Icons are fetched from [Font Awesome](https://fontawesome.com/icons) free catalog. Check below links for supported icons in each style:
->   - [Regular](https://fontawesome.com/search?ip=classic&s=regular&ic=free-collection)
->   - [Solid](https://fontawesome.com/search?ip=classic&s=solid&ic=free-collection)
->   - [Brands](https://fontawesome.com/search?ip=brands&ic=free-collection)
+> For more details on available icons and parameters, check the [Icons documentation](/components/shortcodes/icons).
 
 ## Badge
 

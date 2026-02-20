@@ -3,8 +3,8 @@ title: Images
 slug: "images"
 date: 2025-10-29
 tags: ["elements"]
-coverDark: "images/elements/covers/image_dark.png"
 coverLight: "images/elements/covers/image_light.png"
+coverDark: "images/elements/covers/image_dark.png"
 ---
 
 A Simple Image element that is rendered using the HTML `<img>` tag.
@@ -12,10 +12,11 @@ A Simple Image element that is rendered using the HTML `<img>` tag.
 <!--more-->
 
 ## Features
-- Supports tooltip and aria labels using [alt text](#alt-text).
-- Supports adding caption using the [title](#title) attribute.
-- Supports image resizing using custom [attributes](#attributes).
-- Supports [loading images](#image-path) from page resource, site resource or remote URLs.
+- Supports standard Markdown image syntax.
+- Supports aria-label and tooltip text using alt text.
+- Supports adding caption using the title attribute.
+- Supports image resizing using custom `width` and `height` attributes.
+- Supports loading images from page resource, site resource or remote URLs.
 - Loads all images with `loading="lazy"` attribute for better performance.
 
 ## Syntax
@@ -23,24 +24,25 @@ A Simple Image element that is rendered using the HTML `<img>` tag.
 The basic syntax for images in Markdown follows this pattern:
 
 ```
-![alt text](image-path "optional title")
+![alt text](image-path "optional caption")
 ```
 
 {{< spacing size="sm" >}}
 
-Provide additional attributes to images using curly braces after the image syntax:
+Provide additional attributes to images using curly braces under the image syntax:
 
 ```
-![alt text](image-path "optional title") {width="600" height="400"}
+![alt text](image-path "optional caption") 
+{width="600" height="400"}
 ```
 
-### Components
+### Parameters
 Alt Text
-: Provides alternative text for screen readers and displays when image fails to load
+: (optional) Provides alternative text for screen readers and displays when image fails to load
 : Also used as tooltip text on hover.
 
 Image Path
-: An image can be rendered from below three sources:
+: (required) An image can be rendered from below three sources:
    - **Page Resource**: Image in the same directory as the markdown file (e.g., `karigurashi002.jpg`)
    - **Site/Global Resource**: Image in the `assets/` directory (e.g., `/images/chihiro043.jpg`)
    - **Remote URL**: Full HTTP/HTTPS URL (e.g., `https://example.com/image.jpg`)
@@ -65,11 +67,24 @@ Image Path
    >             └── _index.md
    >```
 
-Title
-: Displays as a caption below the image 
+Title/Caption
+: (optional) Displays as a caption below the image 
 
-Attributes
-: Supports setting image's `width` and `height` using hugo's image processing pipeline.
+Additional Attributes
+: Additional attributes can be added in curly braces under image syntax. 
+
+  width
+  : (optional) Set the width of the image (e.g., `width="300"`).
+  
+  height
+  : (optional) Set the height of the image (e.g., `height="200"`).
+  
+  hideindark
+  : (optional) Set to `true` to hide the image in dark mode.
+  
+  hideinlight
+  : (optional) Set to `true` to hide the image in light mode.
+
 
 > Refer Hugo's excellent resource on [image processing](https://gohugo.io/content-management/image-processing/) for more details.
 
@@ -102,7 +117,33 @@ A simple image with optional caption:
 ![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
 
 #### Caption Alignment
-You can align the caption to `left`, `center`, or `right` using the `captionAlign` attribute:
+You can align the caption to `left`, `center`, or `right` using the `captionalign` attribute.
+
+##### Left Aligned Caption (Default)
+
+```markdown
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{captionalign="left"}
+```
+
+**Output:**
+
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{captionalign="left"}
+
+##### Center Aligned Caption
+
+```markdown
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{captionalign="center"}
+```
+
+**Output:**
+
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{captionalign="center"}
+
+##### Right Aligned Caption
 
 ```markdown
 ![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")

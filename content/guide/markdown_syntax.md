@@ -262,6 +262,7 @@ Replace `NOTE` in above syntax with one of the following types to get different 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 
+> For more details on blockquotes and alert styles, check the [Blockquote Element documentation](/components/elements/blockquotes/).
 
 ## Horizontal Rule
 
@@ -366,5 +367,7 @@ Add the language name after the opening backticks:
     "description": "Title"
 }
 ```
+
+> For more advanced code block rendering options, refer to [Code Block Element](/components/elements/codeblocks/).
 
 [^1]: Sample footnote message.

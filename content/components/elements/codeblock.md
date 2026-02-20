@@ -42,6 +42,30 @@ code here
 ```
 ````
 
+## Parameters
+You can specify a variety of options inside curly braces on the opening fence. Common attributes include:
+
+Language
+: (optional) Specifies the programming language for syntax highlighting (e.g. `python`, `javascript`, `html`). If you don't specify a language, it will render as a plain code block without syntax highlighting.
+
+Additional Attributes
+: Additional optional attributes that can be added in curly braces after the language.
+
+  linenos
+  : set to `table` or `inline` to enable line numbers.
+  
+  hl_lines
+  : list of lines or ranges to highlight (e.g. `["2", "4-5"]`).
+  
+  showtitle
+  : `true`/`false` toggle the header/title bar.
+  
+  showcopy
+  : `true`/`false` toggle the copy‑to‑clipboard button.
+  
+  title
+  : custom title text displayed in the header bar.
+
 ## Examples
 
 ### Example 1: Simple Codeblock (no syntax highlighting)
