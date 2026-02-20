@@ -1,8 +1,8 @@
 ---
-title: "Shortcodes: Widgets"
-slug: "shortcodes-widgets"
+title: "Widgets"
+slug: "widgets"
 date: 2025-10-29
-tags: ["basics", "shortcodes"]
+tags: ["basics"]
 weight: 2
 
 ---

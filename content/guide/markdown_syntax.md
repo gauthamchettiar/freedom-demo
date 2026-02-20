@@ -237,11 +237,15 @@ Use the following syntax:
 ```
 
 Replace `NOTE` in above syntax with one of the following types to get different styles:
+- `INFO` [ {{< icon name="info-circle" style="solid" >}} ]
 - `NOTE` [ {{< icon name="info-circle" style="solid" >}} ]
 - `TIP` [ {{< icon name="lightbulb" style="solid" >}} ]
 - `IMPORTANT` [ {{< icon name="star" style="solid" >}} ]
 - `WARNING` [ {{< icon name="circle-exclamation" style="solid" >}} ]
 - `CAUTION` [ {{< icon name="triangle-exclamation" style="solid" >}} ]
+
+> [!INFO]
+> Useful information that users should know, even when skimming content.
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.

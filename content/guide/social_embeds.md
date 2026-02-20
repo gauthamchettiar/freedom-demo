@@ -1,8 +1,8 @@
 ---
-title: "Shortcodes: Social Embeds"
-slug: "shortcodes-social-embeds"
+title: "Social Embeds"
+slug: "social-embeds"
 date: 2025-10-29
-tags: ["basics", "shortcodes"]
+tags: ["basics"]
 weight: 3
 ---
 

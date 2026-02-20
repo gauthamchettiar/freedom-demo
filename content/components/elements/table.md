@@ -3,6 +3,8 @@ title: Tables
 slug: "tables"
 date: 2025-10-29
 tags: ["elements"]
+coverDark: "images/elements/covers/table_dark.png"
+coverLight: "images/elements/covers/table_light.png"
 ---
 A standard table element rendered using standard markdown table syntax, with Hugo extensions for captions, header settings, and column alignment.
 

@@ -20,19 +20,20 @@ A code element rendered using standard markdown codeblock syntax.
 
 Basic codeblock syntax (no syntax highlighting):
 
+````
 ```
 code here
 ```
+````
 
-
-Codeblock with syntax highlighting (specify language after opening backticks):
+Syntax highlighted codeblock (specify language after opening backticks):
 ````
 ```language
 code here
 ```
 ````
 
-Codeblock with attributes :
+Syntax highlighted codeblock with attributes :
 ````
 ```language {linenos=table hl_lines=["2", "4-5"] showtitle=false showcopy=false title="Example Code"}
 code here
@@ -43,7 +44,7 @@ code here
 
 ### Example 1: Simple Codeblock (no syntax highlighting)
 
-````text {showtitle=false}
+````
 ```
 console.log('Hello, World!');
 ```
@@ -57,7 +58,7 @@ console.log('Hello, World!');
 
 ### Example 2: Codeblock with Syntax Highlighting
 
-````text {showtitle=false}
+````
 ```javascript
 function greet(name) {
     console.log('Hello, ' + name + '!');
@@ -81,7 +82,7 @@ greet('Hugo');
 
 #### Table Style Line Numbers (Default)
 
-````text {showtitle=false}
+````
 ```python {linenos=table}
 def add(a, b):
     return a + b
@@ -97,7 +98,7 @@ def add(a, b):
 
 #### Inline Line Numbers
 
-````text {showtitle=false}
+````
 ```python {linenos=inline}
 def add(a, b):
     return a + b
@@ -113,7 +114,7 @@ def add(a, b):
 
 ### Example 4: Codeblock with Highlighted Lines
 
-````text {showtitle=false}
+````
 ```python {hl_lines=["2", "4-5"]}
 def factorial(n):
     if n == 0:
@@ -139,7 +140,7 @@ def factorial(n):
 
 Hide the codeblock header/title:
 
-````text
+````
 ```python {showtitle=false}
 def add(a, b):
   return a + b
@@ -157,7 +158,7 @@ def add(a, b):
 
 Hide the copy-to-clipboard button:
 
-````text {showtitle=false}
+````
 ```python {showcopy=false}
 def add(a, b):
   return a + b
@@ -173,7 +174,7 @@ def add(a, b):
 
 ##### Hide Both Title and Copy Button
 
-````text {showtitle=false}
+````
 ```python {showtitle=false showcopy=false}
 def add(a, b):
   return a + b
@@ -193,7 +194,7 @@ def add(a, b):
 
 Set a custom codeblock title:
 
-````text {showtitle=false}
+````
 ```python {title="main.py"}
 def add(a, b):
   return a + b
@@ -211,7 +212,7 @@ def add(a, b):
 
 Wrap a codeblock in wide partial to extend the width:
 
-````text {showtitle=false}
+````
 {{</* wide */>}}
 ```json
 {

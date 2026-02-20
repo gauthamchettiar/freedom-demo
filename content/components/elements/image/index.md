@@ -3,6 +3,7 @@ title: Images
 slug: "images"
 date: 2025-10-29
 tags: ["elements"]
+cover: "karigurashi002.jpg"
 ---
 
 A Simple Image element that is rendered using the HTML `<img>` tag.
@@ -167,3 +168,23 @@ Wrap an image in wide partial to make image width extend full width of the viewp
 ![Studio Ghibli: Spirited Away](images/chihiro043.jpg "Studio Ghibli: Spirited Away (2001)")
 {captionalign="center"}
 {{< /wide >}}
+
+
+### Example 7: Dark Mode / Light Mode Specific Images
+Add `hideindark="true"` and `hideinlight="true"` attributes to hide images in dark mode and light mode respectively.
+
+This is useful when you want to provide different images for dark and light modes, since image doesn't look good in one of the modes.
+
+```markdown
+![Studio Ghibli: chihiro043.jpg](images/chihiro043.jpg "Studio Ghibli: Spirited Away (2001)")
+{hideindark=true}
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{hideinlight=true}
+```
+
+**Output:**
+
+![Studio Ghibli: Spirited Away](images/chihiro043.jpg "Studio Ghibli: Spirited Away (2001)")
+{hideindark=true}
+![Studio Ghibli: karigurashi002.jpg](karigurashi002.jpg "Studio Ghibli: Arrietty (2010)")
+{hideinlight=true}

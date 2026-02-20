@@ -5,6 +5,10 @@ theme: freedom
 
 params:
   author: Gautham Chettiar
+  social:
+    github: "https://github.com/gauthamchettiar"
+    email: "gauthamchettiar@gmail.com"
+    linkedin: "https://www.linkedin.com/in/gauthamchettiar/"
 
 menus:
   main:

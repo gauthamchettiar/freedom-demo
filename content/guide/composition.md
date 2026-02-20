@@ -1,8 +1,8 @@
 ---
-title: "Shortcodes: Layouts"
-slug: "shortcodes-layouts"
+title: "Composition"
+slug: "composition"
 date: 2025-10-29
-tags: ["basics", "shortcodes"]
+tags: ["basics"]
 weight: 4
 
 ---
