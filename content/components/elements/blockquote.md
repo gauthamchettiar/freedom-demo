@@ -3,8 +3,8 @@ title: Blockquotes
 slug: "blockquotes"
 date: 2025-10-29
 tags: ["elements"]
-coverLight: "images/elements/covers/blockquote_light.png"
-coverDark: "images/elements/covers/blockquote_dark.png"
+coverLight: "covers/elements/blockquote_light.png"
+coverDark: "covers/elements/blockquote_dark.png"
 ---
 
 A blockquote element rendered from standard Markdown syntax. Supports plain quotations and styled alert (admonition) blockquotes with configurable colors, icons and header text.
@@ -45,8 +45,8 @@ Style
 Title
 : (optional) Custom title for the alert header (defaults to capitalized style name).
 
-Additional Attributes
-: Additional attributes can be added in curly braces after blockquote content.
+Extras
+: Below optional attributes can be added in curly braces after blockquote content, 
   
   color
   : Accent color used for header / left border (accepts   any valid CSS color).
@@ -55,7 +55,7 @@ Additional Attributes
   : Color for header text, use along with `color` to   provide a readable contrast.
   
   icon
-  : Override the default icon, using theme's icon set (e.  g. FontAwesome names like `circle-info` or `lightbulb`).
+  : Override the default icon, using theme's icon set (e.  g. FontAwesome names like   `circle-info` or `lightbulb`).
   
   iconstyle
   : Icon style (e.g. `solid`, `regular`, `brands`),   defaults to `solid`.
@@ -71,6 +71,44 @@ Additional Attributes
 | CAUTION  | Caution       | {{< icon name="triangle-exclamation" >}} | {{< mark style="caution" >}}`#ff5500`{{< /mark >}}     |
 | ACCENT   | Alert         | —                                         | {{< mark style="accent" >}}`--color-accent`{{< /mark >}}     |
 | NONE     | Alert         | —                                         | {{< mark style="none" >}}`--color-bg`{{< /mark >}}     |
+
+## Theming
+
+All default styles provided above can be customized by overriding `layouts/_partials/utils/alert-styles.html`
+
+```go {title="layouts/_partials/utils/alert-styles.html"}
+{{- return dict
+  "info" (dict "color" "#0057b8" "textColor" "#fff" "icon" "circle-info" "iconStyle" "solid" "title" "Info")
+  "note" (dict "color" "#ffc107" "textColor" "#000" "icon" "pen-to-square" "iconStyle" "solid" "title" "Note")
+  "tip" (dict "color" "#00bcd4" "textColor" "#000" "icon" "lightbulb" "iconStyle" "solid" "title" "Tip")
+  "warning" (dict "color" "#ff9900" "textColor" "#000" "icon" "circle-exclamation" "iconStyle" "solid" "title" "Warning")
+  "important" (dict "color" "#6200ea" "textColor" "#fff" "icon" "star" "iconStyle" "solid" "title" "Important")
+  "caution" (dict "color" "#ff5500" "textColor" "#fff" "icon" "triangle-exclamation" "iconStyle" "solid" "title" "Caution")
+  "accent" (dict "color" "var(--color-accent)" "textColor" "var(--color-bg)" "icon" "" "iconStyle" "" "title" "Alert")
+  "none" (dict "color" "var(--color-bg)" "textColor" "var(--color-text)" "icon" "" "iconStyle" "" "title" "Alert")
+-}}
+```
+
+`--color-accent`, `--color-bg` and `--color-text` are CSS variables defined in `assets/css/theme.css` that you can override to customize the colors of `ACCENT` and `NONE` styles.
+
+```css {title="assets/css/theme.css"}
+/* Theme colors */
+:root {
+    /* Light theme (default) */
+    --color-bg: #fcfcfc;
+    --color-text: #222222;
+    --color-accent: #01827c;
+
+    /* Dark theme palette */
+    --dark-color-bg: #001f2c;
+    --dark-color-text: #cad6e2;
+    --dark-color-accent: #00fff2;
+}
+```
+
+> Note: changing `theme.css` variables will affect all components that use those variables.
+
+
 ## Examples
 
 ### Example 1: Simple blockquote
@@ -82,7 +120,7 @@ Additional Attributes
 **Output:**
 > "There is no place like home." — Example
 
-### Example 2: Alert blockquote
+### Example 2: Alert blockquote (with default styles)
 
 ```markdown
 > [!INFO]
@@ -135,7 +173,7 @@ Additional Attributes
 > [!NONE]
 > This is a neutral alert without special styling.
 
-### Example 3: Alert with custom title, color and icon
+### Example 3: Alert blockquote with custom title, color and icon
 
 ```markdown
 > [!NONE] Python 3.11 Required
@@ -147,6 +185,34 @@ Additional Attributes
 > [!NONE] Python 3.11 Required
 > Make sure to upgrade your Python version to 3.11.
 {color="#77a03d" textcolor="#ffffff" icon="python" iconstyle="brands"}
+
+> **Note**: In this example, we used `NONE` style, but you can use any of the default styles and override their default color and icon as needed (check example below). 
+
+### Example 4: Alert blockquote with overriden attributes
+
+#### Custom Color and Text Color
+
+```markdown
+> [!WARNING]
+This is a warning with a custom color.
+{color="#ff22f0" textcolor="#ffffff"}
+```
+
+> [!WARNING]
+This is a warning with a custom color and text color.
+{color="#ff22f0" textcolor="#ffffff"}
+
+#### Custom Icon
+
+```markdown
+> [!INFO]
+This is an informational message with a custom icon.
+{icon="heart" iconstyle="regular"}
+```
+
+> [!INFO]
+This is an informational message with a custom icon.
+{icon="heart" iconstyle="regular"}
 
 ### Example 4: Wide blockquote
 Wrap any blockquote in the `wide` shortcode to span width of viewport.

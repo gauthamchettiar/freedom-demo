@@ -3,8 +3,8 @@ title: Codeblocks
 slug: "codeblocks"
 date: 2025-10-29
 tags: ["elements"]
-coverLight: "images/elements/covers/codeblock_light.png"
-coverDark: "images/elements/covers/codeblock_dark.png"
+coverLight: "covers/elements/codeblock_light.png"
+coverDark: "covers/elements/codeblock_dark.png"
 ---
 
 A code element rendered using standard markdown codeblock syntax.
@@ -48,8 +48,11 @@ You can specify a variety of options inside curly braces on the opening fence. C
 Language
 : (optional) Specifies the programming language for syntax highlighting (e.g. `python`, `javascript`, `html`). If you don't specify a language, it will render as a plain code block without syntax highlighting.
 
-Additional Attributes
-: Additional optional attributes that can be added in curly braces after the language.
+Code (that needs to be highlighted)
+: The actual code content goes between the opening and closing triple backticks ` ``` `.
+
+Extras
+: Below optional attributes that can be added in curly braces after language,
 
   linenos
   : set to `table` or `inline` to enable line numbers.
@@ -65,6 +68,21 @@ Additional Attributes
   
   title
   : custom title text displayed in the header bar.
+
+## Theming
+Codeblocks are themed using chroma highlighting, this theme uses following chroma themes for light and dark mode respectively:
+
+- Light mode: `solarized-light`
+- Dark mode: `solarized-dark256`
+
+If you have not created it already then create this folder `assets/css/chroma` in your Hugo site and generate custom chroma themes using below command:
+```bash
+hugo gen chromastyles --style=solarized-light > assets/css/chroma/light.css
+hugo gen chromastyles --style=solarized-dark256 > assets/css/chroma/dark.css
+```
+
+Replace `solarized-light` and `solarized-dark256` with any other chroma themes of your choice, you can find the full list of available chroma themes here: https://xyproto.github.io/splash/docs/all.html.
+
 
 ## Examples
 
@@ -160,9 +178,9 @@ def factorial(n):
         return n * factorial(n-1)
 ``` 
 
-#### Example 5: Hide elements
+#### Example 5: Code block with Hidden Elements
 
-##### Hide Title
+##### Hidden Title
 
 Hide the codeblock header/title:
 
@@ -180,7 +198,7 @@ def add(a, b):
   return a + b
 ```
 
-##### Hide Copy Button
+##### Hidden Copy Button
 
 Hide the copy-to-clipboard button:
 
@@ -198,7 +216,7 @@ def add(a, b):
   return a + b
 ```
 
-##### Hide Both Title and Copy Button
+##### Hidden Title and Copy Button
 
 ````
 ```python {showtitle=false showcopy=false}
@@ -216,7 +234,7 @@ def add(a, b):
 
 
 
-### Example 6 : Custom title
+### Example 6: Codeblock with Custom Title
 
 Set a custom codeblock title:
 
@@ -234,7 +252,7 @@ def add(a, b):
   return a + b
 ```
 
-### Example 7: Wide Codeblock
+### Example 7: A Wide Codeblock
 
 Wrap a codeblock in wide partial to extend the width:
 

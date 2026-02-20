@@ -3,8 +3,8 @@ title: Tables
 slug: "tables"
 date: 2025-10-29
 tags: ["elements"]
-coverLight: "images/elements/covers/table_light.png"
-coverDark: "images/elements/covers/table_dark.png"
+coverLight: "covers/elements/table_light.png"
+coverDark: "covers/elements/table_dark.png"
 ---
 A standard table element rendered using standard markdown table syntax, with Hugo extensions for captions, header settings, and column alignment.
 
@@ -28,6 +28,15 @@ Basic markdown table syntax:
 
 {{< spacing size="sm" >}}
 
+Align text in columns using `:` in header row:
+
+```
+| Left Aligned | Center Aligned | Right Aligned |
+| :----------- | :------------: | ------------: |
+| Cell 1       | Cell 2         | Cell 3        |
+```
+
+
 Provide additional attributes to tables using curly braces after table:
 
 ```
@@ -39,26 +48,44 @@ Provide additional attributes to tables using curly braces after table:
 
 {{< spacing size="sm" >}}
 
-Align text in columns using `:` in header row:
-
-```
-| Left Aligned | Center Aligned | Right Aligned |
-| :----------- | :------------: | ------------: |
-| Cell 1       | Cell 2         | Cell 3        |
-```
-
 ## Parameters
-Attributes are added in curly braces immediately after the table. Supported attributes include:
 
-caption
-: (optional) adds a caption to the table.
+Table Header
+: (required) Controls data in header cells, these are any cells above ``--------`` divider. 
 
-captionalign
-: (optional) aligns the caption; valid values are `left` (default), `center`, or `right`.
+Table Divider
+: (required) A divider row of dashes (`--------`) is required to separate header from body. You can control column text alignment by adding `:` to left, right or both sides of the divider for each column.
 
-header
-: (optional) controls heading placement with `row`, `column`, `both`, or `none`.
+Table Body
+: (required) Contains the actual data cells of the table, these are any rows below the divider row.
 
+Extras
+: Below optional attributes can be added in curly braces after table,
+
+  caption
+  : (optional) adds a caption to the table.
+  
+  captionalign
+  : (optional) aligns the caption; valid values are `left`   (default), `center`, or `right`.
+  
+  header
+  : (optional) controls heading placement with `row`, `column`,   `both`, or `none`.
+
+## Theming
+Table headings are rendered with site's `--color-accent` color by default, and you can customize this by overriding the CSS variable in your theme's `assets/css/theme.css` file:
+
+```css {title="assets/css/theme.css"}
+/* Theme colors */
+:root {
+    /* Light theme (default) */
+    --color-accent: #01827c;
+
+    /* Dark theme palette */
+    --dark-color-accent: #00fff2;
+}
+```
+
+> Note: changing `theme.css` variables will affect all components that use those variables.
 
 ## Examples
 
@@ -255,6 +282,61 @@ header
 | Kiki    | Witch    | 1989 |
 | Chihiro | Student  | 2001 |
 
+### Example 5: Table alignment
+
+#### Left Aligned Table (Default)
+```markdown
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+```
+
+**Output:**
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+
+#### Center Aligned Table
+
+```markdown
+{{</* align align="center" */>}}
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+{{</* /align */>}}
+```
+
+**Output:**
+{{< align align="center" >}}
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+{{< /align >}}
+
+#### Right Aligned Table
+
+```markdown
+{{</* align align="right" */>}}
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+{{</* /align */>}}
+```
+
+**Output:**
+{{< align align="right" >}}
+| Name    | Role     |
+| ------- | -------- |
+| Kiki    | Witch    |
+| Chihiro | Student  |
+{{< /align >}}
+
+
 ### Example 5: Full Sized Table 
 
 Wrap a table in full partial to make table width extend full width of the page.
@@ -278,7 +360,7 @@ Wrap a table in full partial to make table width extend full width of the page.
 {{< /full >}}
 
 
-### Example 6: Really wide table
+### Example 6: Table with a lot of Columns
 
 If you have a table with many columns, it will automatically be horizontally scrollable :
 

@@ -4,6 +4,7 @@ slug: "markdown-syntax"
 date: 2025-10-29
 tags: ["basics"]
 weight: 1
+excludefromtoc: ["Heading 1", "Heading 2", "Heading 3", "Heading 4", "Heading 5", "Heading 6"]
 ---
 
 A comprehensive guide to markdown syntax supported by theme. Each element works out-of-the-box for both dark and light mode.

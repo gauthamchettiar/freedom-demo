@@ -3,8 +3,8 @@ title: Images
 slug: "images"
 date: 2025-10-29
 tags: ["elements"]
-coverLight: "images/elements/covers/image_light.png"
-coverDark: "images/elements/covers/image_dark.png"
+coverLight: "covers/elements/image_light.png"
+coverDark: "covers/elements/image_dark.png"
 ---
 
 A Simple Image element that is rendered using the HTML `<img>` tag.
@@ -70,8 +70,8 @@ Image Path
 Title/Caption
 : (optional) Displays as a caption below the image 
 
-Additional Attributes
-: Additional attributes can be added in curly braces under image syntax. 
+Extras
+: Below optional attributes can be added in curly braces under image syntax. 
 
   width
   : (optional) Set the width of the image (e.g., `width="300"`).
