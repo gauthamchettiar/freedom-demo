@@ -9,4 +9,4 @@ cat "theme: freedom" >> hugo.yaml
 hugo server -D
 ```
 
-Check below for a detailed guide on how to use this theme :
+Check below to get a quick overview of all theme features and how to use them: 
