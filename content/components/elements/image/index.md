@@ -3,7 +3,8 @@ title: Images
 slug: "images"
 date: 2025-10-29
 tags: ["elements"]
-cover: "karigurashi002.jpg"
+coverDark: "images/elements/covers/image_dark.png"
+coverLight: "images/elements/covers/image_light.png"
 ---
 
 A Simple Image element that is rendered using the HTML `<img>` tag.

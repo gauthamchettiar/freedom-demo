@@ -3,6 +3,8 @@ title: Codeblocks
 slug: "codeblocks"
 date: 2025-10-29
 tags: ["elements"]
+coverLight: "images/elements/covers/codeblock_light.png"
+coverDark: "images/elements/covers/codeblock_dark.png"
 ---
 
 A code element rendered using standard markdown codeblock syntax.

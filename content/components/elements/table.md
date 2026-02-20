@@ -231,10 +231,10 @@ Provide additional attributes to tables using curly braces after table:
 #### Mixed Alignment
 
 ```markdown
-| Name    | Role     | Year |
+| Name    | Role     | Year   |
 | :------ | :------: | -----: |
-| Kiki    | Witch    | 1989 |
-| Chihiro | Student  | 2001 |
+| Kiki    | Witch    | 1989   |
+| Chihiro | Student  | 2001   |
 ```
 
 **Output:**
